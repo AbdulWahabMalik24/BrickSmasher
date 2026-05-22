@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BrickSmasher VHS Rental</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-page="home">
+    <main class="page-shell">
+        <section class="hero-card">
+            <p class="eyebrow">BrickSmasher</p>
+            <h1>VHS Rental Store Manager</h1>
+            <p class="hero-copy">
+                Manage store members, track movie inventory, and handle rentals without refreshing the page.
+            </p>
+
+            <div class="card-grid">
+                <a class="feature-card" href="{{ url_for('account') }}">
+                    <h2>Create Account</h2>
+                    <p>Add a new member with a unique email address.</p>
+                </a>
+                <a class="feature-card" href="{{ url_for('movie') }}">
+                    <h2>Manage Movies</h2>
+                    <p>Add films and adjust total copies owned in inventory.</p>
+                </a>
+                <a class="feature-card" href="{{ url_for('rent') }}">
+                    <h2>Rent / Return</h2>
+                    <p>Look up a member and process checkouts or returns instantly.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

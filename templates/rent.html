@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rent and Return | BrickSmasher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-page="rent">
+    <main class="page-shell">
+        <section class="panel panel-wide">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">Rentals</p>
+                    <h1>Rent / Return Movies</h1>
+                </div>
+                <a class="text-link" href="{{ url_for('home') }}">Back Home</a>
+            </div>
+
+            <form id="member-search-form" class="inline-form" novalidate>
+                <label class="input-grow">
+                    <span class="label-title">Member Email</span>
+                    <input id="member-email" name="email" type="email" maxlength="120" placeholder="Search by member email" required>
+                </label>
+                <button class="primary-button" type="submit">Load Member</button>
+            </form>
+
+            <div id="rent-message" class="message" aria-live="polite"></div>
+
+            <section id="member-results" class="member-results hidden">
+                <div class="member-summary">
+                    <h2 id="member-name">Member</h2>
+                    <p id="member-email-display" class="subtle-text"></p>
+                </div>
+
+                <div class="two-column-layout">
+                    <section class="subpanel">
+                        <div class="section-heading">
+                            <h3>Checked Out Movies</h3>
+                            <p>Click return to bring a movie back into circulation.</p>
+                        </div>
+                        <div class="table-shell">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="checked-out-body">
+                                    <tr>
+                                        <td colspan="2" class="empty-state">Search for a member to view rentals.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="subpanel">
+                        <div class="section-heading">
+                            <h3>Available Movies</h3>
+                            <p>Click rent to check out a movie for this member.</p>
+                        </div>
+                        <div class="table-shell">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Available Copies</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="available-movies-body">
+                                    <tr>
+                                        <td colspan="3" class="empty-state">Available movies appear after a member lookup.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

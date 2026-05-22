@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Account | BrickSmasher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-page="account">
+    <main class="page-shell">
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">Members</p>
+                    <h1>Create Account</h1>
+                </div>
+                <a class="text-link" href="{{ url_for('home') }}">Back Home</a>
+            </div>
+
+            <form id="account-form" class="stack-form" novalidate>
+                <label>
+                    <span>First Name</span>
+                    <input id="first-name" name="firstName" type="text" maxlength="50" required>
+                </label>
+                <label>
+                    <span>Last Name</span>
+                    <input id="last-name" name="lastName" type="text" maxlength="50" required>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input id="email" name="email" type="email" maxlength="120" required>
+                </label>
+                <button class="primary-button" type="submit">Create Account</button>
+            </form>
+
+            <div id="account-message" class="message" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

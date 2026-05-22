@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manage Movies | BrickSmasher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-page="movie">
+    <main class="page-shell">
+        <section class="panel panel-wide">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">Inventory</p>
+                    <h1>Manage Movies</h1>
+                </div>
+                <a class="text-link" href="{{ url_for('home') }}">Back Home</a>
+            </div>
+
+            <form id="movie-form" class="inline-form" novalidate>
+                <label class="input-grow">
+                    <span class="label-title">Movie Title</span>
+                    <input id="movie-title" name="title" type="text" maxlength="120" placeholder="Enter a VHS title" required>
+                </label>
+                <button class="primary-button" type="submit">Add Movie</button>
+            </form>
+
+            <div id="movie-message" class="message" aria-live="polite"></div>
+
+            <div class="table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>In Stock</th>
+                            <th>Checked Out</th>
+                            <th>(+)</th>
+                            <th>(-)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movie-table-body">
+                        <tr>
+                            <td colspan="5" class="empty-state">Loading movies...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
